@@ -14,7 +14,7 @@ class Form
 
     public function formIsValid()
     {
-        if ($this->tabletteQtt == "" && $this->pcQtt == "" && $this->portableQtt == "" && $this->adresse == "") {
+        if ($this->tabletteQtt == "" || $this->pcQtt == "" || $this->portableQtt == "" || $this->adresse == "") {
             $this->warningMessage = '<p class="warning"> Veuillez remplir tous les champs</p>';
             return false;
         } elseif ($this->tabletteQtt < 0  || $this->pcQtt < 0 || $this->portableQtt  < 0) {

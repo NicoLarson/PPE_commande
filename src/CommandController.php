@@ -1,8 +1,8 @@
 <?php
 
-require 'Products.php';
-require 'Command.php';
-require 'Form.php';
+require 'Entity/Products.php';
+require 'Entity/Command.php';
+require 'Form/Form.php';
 
 $formulaire = new Form($_POST['tablettes'], $_POST['pc'], $_POST['portable'], htmlspecialchars($_POST['adresse']));
 
@@ -14,12 +14,12 @@ function resultat_commande()
     $facture = new Command($_POST['tablettes'], $_POST['pc'], $_POST['portable'], htmlspecialchars($_POST['adresse']));
     $totalTVA = $facture->totalTVA($tablette->price, $pc->price, $portable->price);
     $totalHT = $facture->totalHT($tablette->price, $pc->price, $portable->price);
-    require './view/resultat_commande.php';
+    require '../templates/command/results_command.php';
 }
 
 function validation_commande()
 {
     $formulaire = new Form($_POST['tablettes'], $_POST['pc'], $_POST['portable'], $_POST['adresse']);
-    require './view/validation_commande.php';
+    require '../templates/command/validation_command.php';
 }
 

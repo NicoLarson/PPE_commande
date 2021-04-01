@@ -48,5 +48,5 @@ $title = "Formulaire de commande";
 
 <?php
 $content = ob_get_clean();
-require('template.php');
+require('../templates/base.php');
 ?>
