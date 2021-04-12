@@ -67,6 +67,9 @@ form table td input {
   line-height: 2.5rem;
   padding: 0.3rem;
 }
+form table td input::placeholder{
+  opacity: .8;
+}
 form table td input:focus {
   border: solid 0.1rem #222;
 }
